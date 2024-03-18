@@ -9,7 +9,7 @@ export const QuickTransfer = () => {
         Quick transfer
       </h3>
 
-      <div className="rounded-3xl bg-slate-100 flex flex-col space-y-5 px-6 py-20">
+      <div className="rounded-3xl bg-green-100 flex flex-col space-y-5 px-6 py-20">
         <div className="w-full flex items-center space-x-3">
           <input
             type="tel"
@@ -17,7 +17,7 @@ export const QuickTransfer = () => {
             placeholder="Account Number"
           />
 
-          <button className="px-5 py-3 rounded-lg bg-slate-900/90 text-sm text-slate-50 hover:bg-black transition duration-300">
+          <button className="px-5 py-3 rounded-lg bg-green-900/90 text-sm text-green-50 hover:bg-black transition duration-300">
             <FaPaperPlane />
           </button>
         </div>
@@ -52,11 +52,11 @@ export const QuickTransfer = () => {
         </div>
 
         <div className="w-full flex justify-center space-x-3 font-bold text-sm">
-          <button className="bg-slate-950 text-slate-50 px-4 py-2 w-full shadow-md rounded-lg hover:bg-slate-300 border-2 border-slate-950 hover:text-slate-950 transition duration-300">
+          <button className="bg-green-950 text-green-50 px-4 py-2 w-full shadow-md rounded-lg hover:bg-green-300 border-2 border-green-950 hover:text-green-950 transition duration-300">
             Send Money
           </button>
 
-          <button className="bg-slate-50 text-slate-950 px-4 py-2 w-full shadow-md rounded-lg hover:bg-slate-300 border-2 border-slate-950 hover:text-slate-950 transition duration-300">
+          <button className="bg-green-50 text-green-950 px-4 py-2 w-full shadow-md rounded-lg hover:bg-green-300 border-2 border-green-950 hover:text-green-950 transition duration-300">
             Save as Draft
           </button>
         </div>

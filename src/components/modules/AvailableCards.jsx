@@ -19,7 +19,7 @@ export const AvailableCards = () => {
   return (
     <div className="w-full mt-[80pt] px-2 py-2">
       <div className="w-full flex justify-between items-center">
-        <span className="text-xl font-[450] text-slate-950">
+        <span className="text-xl font-[450] text-green-950">
           Available Cards
         </span>
 
@@ -30,20 +30,20 @@ export const AvailableCards = () => {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="w-full py-7 px-6 rounded-3xl bg-slate-200 flex justify-between my-3"
+            className="w-full py-7 px-6 rounded-3xl bg-green-200 flex justify-between my-3"
           >
             <div className="flex items-center space-x-3">
-              <span className="font-bold text-2xl text-slate-950">
+              <span className="font-bold text-2xl text-green-950">
                 {card.balance.toLocaleString()}
               </span>
-              <span className="text-[9pt] font-[400] text-slate-950 uppercase">
+              <span className="text-[9pt] font-[400] text-green-950 uppercase">
                 {card.currency}
               </span>
             </div>
 
             <div className="flex justify-around items-center space-x-6">
               <span className="text-sm font-[450]">...{card.digits}</span>
-              <span className="text-3xl text-slate-950">
+              <span className="text-3xl text-green-950">
                 {card.type == "mastercard" ? (
                   <FaCcVisa />
                 ) : card.type == "mastercard" ? (

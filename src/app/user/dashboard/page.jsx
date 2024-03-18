@@ -6,35 +6,35 @@ import React from "react";
 
 const Dashboard = () => {
   return (
-    <main className="w-full bg-slate-50 p-5 rounded-3xl flex">
-      <div className="w-full md:w-3/4 px-3 md:pr-20 md:pl-4">
+    <main className="w-full bg-green-50 lg:p-5 p-2 rounded-3xl flex flex-wrap">
+      <div className="w-full md:w-full lg:w-3/4 px-3 lg:pr-20 lg:pl-4">
         <div className="w-full h-fit flex flex-wrap flex-col md:flex-row">
-          <div className="w-full h-fit md:w-1/2 px-8 py-3">
+          <div className="w-full h-fit md:w-full lg:w-1/2 px-8 py-3">
             <div className="mb-10 my-2">
               <h4 className="font-bold">Dashboard</h4>
             </div>
             <VirtualCard />
           </div>
 
-          <div className="w-full h-fit md:w-1/2 px-8 py-3">
+          <div className="w-full h-fit md:w-full lg:w-1/2 lg:px-8 py-3">
             <div className="mb-10 my-2">
               <h4 className="font-bold">Upcoming Payments</h4>
             </div>
             <UpcomingPayments />
           </div>
 
-          <div className="w-full px-8 py-3">
+          <div className="w-full lg:px-8 py-3">
             {/* <div className="mb-10 my-2">
-                            <h4 className="font-bold">
-                                Recent Transactons
-                            </h4>
-                        </div> */}
+                <h4 className="font-bold">
+                    Recent Transactons
+                </h4>
+            </div> */}
             <RecentTrxs />
           </div>
         </div>
       </div>
 
-      <div className="w-full md:w-1/4">
+      <div className="w-full md:w-full lg:w-1/4">
         <QuickTransfer />
       </div>
     </main>

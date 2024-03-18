@@ -1,9 +1,13 @@
+import { auth } from "@/auth";
 import React from "react";
 import { FaBox, FaCcMastercard, FaVolumeUp } from "react-icons/fa";
 
-export const VirtualCard = () => {
+export const VirtualCard = async () => {
+  const session = await auth();
+
+  console.log("Virtual Session", session);
   return (
-    <div className="w-full h-full rounded-3xl bg-slate-900/80 text-slate-50 px-8 py-8">
+    <div className="w-full h-full rounded-3xl bg-green-900/80 text-green-50 px-8 py-8">
       <div className="flex justify-between items-center text-2xl mb-10">
         <div>
           <FaBox />
@@ -23,7 +27,7 @@ export const VirtualCard = () => {
       <div className="w-full flex items-center justify-between">
         <div className="flex space-y-0 flex-col">
           <span className="text-[9pt] font-bold">Card Holder</span>
-          <span className="text-3xl font-[450]">Derrick Fisher</span>
+          <span className="text-3xl font-[450]"></span>
         </div>
 
         <div className="text-6xl">

@@ -14,21 +14,10 @@ import { Button, Text } from "@/components/form/Input";
 import { signIn } from "@/auth";
 
 export default function Login() {
-  const authLinks = [
-    {
-      label: "New here? ",
-      prompt: "let's sign you up!",
-      path: "/auth/register",
-    },
-    {
-      prompt: "lost my password",
-      path: "/auth/recover",
-    },
-  ];
-
   const handleGoogleSignin = async (e) => {
     "use server";
     await signIn("google");
+    window.location.href = "/users/dashboard";
   };
 
   const handleCredentialSignin = async (e) => {
@@ -53,43 +42,18 @@ export default function Login() {
             psdIcon={{ shown: <FaEye />, hidden: <FaEyeSlash /> }}
           />
         </div>
-        {/* 
-        <div className="px-4">
-          {authLinks.map((link, index) => (
-            <div key={index} className="mb-2 text-sm">
-              {link?.label}{" "}
-              <a
-                href={link.path}
-                className="text-slate-700 underline italic hover:text-indigo-600 font-[450] transition"
-              >
-                {link.prompt}
-              </a>
-            </div>
-          ))}
-        </div> */}
 
-        <div className="w-full mt-5">
+        <div className="w-full mt-5 flex flex-col space-y-3 md:space-y-0 md:space-x-3 space-x-0 md:flex-row justify-center items-center px-4">
           <Button text={"Sign In"} type="button" icon={<FaRocket />} />
-        </div>
-        <div className="w-full flex mx-4 items-center mt-7 space-x-5">
+
           <button
             onClick={handleGoogleSignin}
-            className="bg-slate-800 hover:bg-slate-200 border-slate-800 border-2 hover:text-slate-800 transition px-8 py-3 rounded-xl text-slate-100 shadow-lg flex justify-center items-center space-x-3 font-[450]"
+            className="min-w-[150pt] bg-green-800 hover:bg-green-200 border-green-800 border-2 hover:text-green-800 transition px-8 py-3 rounded-lg text-green-100 shadow-lg flex justify-center items-center space-x-3 font-[450]"
           >
             <div>
               <FaGoogle />
             </div>
             <div>Google</div>
-          </button>
-
-          <button
-            onClick={handleFacebookSignin}
-            className="bg-slate-800 hover:bg-slate-200 border-slate-800 border-2 hover:text-slate-800 transition px-8 py-3 rounded-xl text-slate-100 shadow-lg flex justify-center items-center space-x-3 font-[450]"
-          >
-            <div>
-              <FaFacebookF />
-            </div>
-            <div>Facebook</div>
           </button>
         </div>
       </form>
