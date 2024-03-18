@@ -28,7 +28,10 @@ export const AvailableCards = () => {
 
       <div className="mt-5">
         {cards.map((card, index) => (
-          <div className="w-full py-7 px-6 rounded-3xl bg-slate-200 flex justify-between my-3">
+          <div
+            key={index}
+            className="w-full py-7 px-6 rounded-3xl bg-slate-200 flex justify-between my-3"
+          >
             <div className="flex items-center space-x-3">
               <span className="font-bold text-2xl text-slate-950">
                 {card.balance.toLocaleString()}
