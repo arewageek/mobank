@@ -1,16 +1,6 @@
-"use client";
-import {
-  FaChartArea,
-  FaCog,
-  FaCreditCard,
-  FaHome,
-  FaStar,
-  FaUser,
-  FaUsers,
-} from "react-icons/fa";
+import { FaCog, FaCreditCard, FaHome, FaUsers } from "react-icons/fa";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export const Sidenav = () => {
   const links = [
@@ -18,7 +8,7 @@ export const Sidenav = () => {
       active: true,
       label: "Home",
       icon: <FaHome />,
-      url: "/",
+      url: "/user",
     },
 
     {
@@ -41,17 +31,9 @@ export const Sidenav = () => {
       url: "/user/settings",
     },
   ];
-  const prevSidenavVisibility =
-    localStorage.getItem("sidenavvisibility") || false;
-
-  const [sidenav, setSidenav] = useState(prevSidenavVisibility);
-
-  useEffect(() => {
-    setSidenav(localStorage.getItem("sidenavvisibility"));
-  }, [localStorage.getItem("sidenavvisibility")]);
 
   return (
-    <div className={`h-screen w-full ${!sidenav && "hidden"} lg:block`}>
+    <div className={`h-screen w-full hidden lg:block`}>
       <div className="w-full h-[80%] flex flex-col justify-between text-sm">
         <div className="flex flex-col space-y-4">
           {/* nav */}
@@ -71,8 +53,6 @@ export const Sidenav = () => {
         </div>
 
         <div className="flex flex-col space-y-4">
-          {/* nav */}
-
           {profileLinks.map((link, index) => (
             <div
               key={index}

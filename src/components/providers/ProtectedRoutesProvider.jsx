@@ -1,23 +1,23 @@
-"use client";
+// "use client";
 
-import { fsUserExist } from "@/lib/firestore";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+// import { fsUserExist } from "@/lib/firestore";
+// import { useSession } from "next-auth/react";
+// import { useRouter } from "next/navigation";
 
-export const ProtectedRoutesProvider = ({ children }) => {
-  const { data: session } = useSession();
-  //   const router = useRouter();
+// export const ProtectedRoutesProvider = ({ children }) => {
+//   const { data: session } = useSession();
+//   //   const router = useRouter();
 
-  console.log("Session 1 ::: ", session);
+//   console.log("Session 1 ::: ", session);
 
-  //   fsUserExist("arewageek@gmail.com");
+//   //   fsUserExist("arewageek@gmail.com");
 
-  if (!session) {
-    // router.replace("/login");
-    // return false;
-  }
+//   if (!session) {
+//     // router.replace("/login");
+//     // return false;
+//   }
 
-  //   check if user profile exist
+//   //   check if user profile exist
 
-  return children;
-};
+//   return children;
+// };

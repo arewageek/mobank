@@ -1,32 +1,17 @@
-import { addDoc, collection, doc, getDocs, query } from "firebase/firestore";
+import { collection, query, getDocs, where } from "firebase/firestore";
 import { db } from "./firebaseconfig";
 
-export const fsUserExist = async (email) => {
+export const fsUserCards = async (user) => {
   try {
-    const userRef = doc(db, "users", {
-      email: "arewageek@gmail.com",
-    });
+    const q = query(collection(db, "cards"));
 
-    console.log(userRef);
-  } catch (e) {
-    console.log(e);
-  }
-};
+    const cards = await getDocs(q);
 
-export const fsSignup = async (name, email, country, password) => {
-  try {
-    const userRef = await addDoc(collection(db, "users"), {
-      name,
-      email,
-      country,
-      password,
-    });
+    const availableCards = [];
 
-    if (userRef) {
-      console.log(userRef.id);
-    } else {
-      console.log("Could not create user details");
-    }
+    cards.forEach((card) => availableCards.push(card.data()));
+
+    return availableCards[0];
   } catch (e) {
     console.log(e);
   }

@@ -1,5 +1,6 @@
 import "./globals.css";
-import AuthRoutesProvider from "@/components/providers/AuthRoutesProvider";
+
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata = {
   title: "Mobank",
@@ -8,10 +9,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        <AuthRoutesProvider>{children}</AuthRoutesProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body>{children}</body>
+      </html>
+    </ClerkProvider>
   );
 }
