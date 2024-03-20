@@ -17,9 +17,7 @@ export const Container = ({ title, icon, children }) => {
     <div className="w-screen h-screen flex justify-center items-center px-5 py-10 bg-white">
       <div className="w-full md:w-1/3 rounded-lg bg-white px-5 py-10">
         <div className="w-full flex justify-between items-center text-slate-700 font-bold px-5">
-          <div className="w-full text-3xl font-bold text-center">
-            Welcome Back
-          </div>
+          <div className="w-full text-3xl font-bold text-center"></div>
         </div>
         {children}
       </div>

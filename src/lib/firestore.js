@@ -1,7 +1,5 @@
-import { collection, doc, getDocs } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, query } from "firebase/firestore";
 import { db } from "./firebaseconfig";
-
-// check if user exist
 
 export const fsUserExist = async (email) => {
   try {
@@ -10,6 +8,25 @@ export const fsUserExist = async (email) => {
     });
 
     console.log(userRef);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const fsSignup = async (name, email, country, password) => {
+  try {
+    const userRef = await addDoc(collection(db, "users"), {
+      name,
+      email,
+      country,
+      password,
+    });
+
+    if (userRef) {
+      console.log(userRef.id);
+    } else {
+      console.log("Could not create user details");
+    }
   } catch (e) {
     console.log(e);
   }

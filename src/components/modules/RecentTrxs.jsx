@@ -52,23 +52,6 @@ export const RecentTrxs = () => {
             Recent Transactions
           </h3>
         </div>
-        <div className="w-full lg:w-auto">
-          <select
-            name="sort"
-            id="sort"
-            className="px-4 py-2  rounded-xl bg-transparent border-2 border-slate-300 text-sm text-slate-700 w-[120pt]"
-          >
-            <option className="px-4 py-2" value="">
-              Sort By
-            </option>
-            <option className="px-4 py-2" value="amount">
-              Amount
-            </option>
-            <option className="px-4 py-2" value="date">
-              Date
-            </option>
-          </select>
-        </div>
       </div>
 
       <div className="overflow-x-auto w-full py-5 px-2">
@@ -90,7 +73,7 @@ export const RecentTrxs = () => {
                   <div className="flex items-center w-fit">{trx.title}</div>
                 </td>
                 <td className="py-5 px-4">
-                  <div className="flex items-center w-fit text-slate-400">
+                  <div className="flex items-center w-fit text-slate-600">
                     {trx.date}
                   </div>
                 </td>

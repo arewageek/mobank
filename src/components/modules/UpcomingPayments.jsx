@@ -37,7 +37,7 @@ export const UpcomingPayments = ({ cols = 2, count = 2 }) => {
               key={index}
               className={`w-full md:w-1/${cols} bg-green-300 py-8 px-6 rounded-2xl flex flex-col items-start space-y-7`}
             >
-              <div className="text-4xl rounded-2xl px-3 py-3 bg-green-950 text-green-50">
+              <div className="text-4xl rounded-2xl px-3 py-3 bg-transparent text-transparent hidden lg:block">
                 {item.icon}
               </div>
 
@@ -47,7 +47,7 @@ export const UpcomingPayments = ({ cols = 2, count = 2 }) => {
                   <p className="text-[9pt] font-light">{item.type}</p>
                 </div>
               </div>
-              <div className="font-bold text-3xl text-green-800">
+              <div className="font-bold text-3xl text-green-950">
                 ${item.amount.toLocaleString()}
               </div>
             </div>

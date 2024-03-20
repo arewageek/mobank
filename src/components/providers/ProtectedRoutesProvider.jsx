@@ -6,9 +6,9 @@ import { useRouter } from "next/navigation";
 
 export const ProtectedRoutesProvider = ({ children }) => {
   const { data: session } = useSession();
-  const router = useRouter();
+  //   const router = useRouter();
 
-  console.log("Session1 ::: ", session);
+  console.log("Session 1 ::: ", session);
 
   //   fsUserExist("arewageek@gmail.com");
 

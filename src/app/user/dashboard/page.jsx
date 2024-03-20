@@ -9,7 +9,7 @@ const Dashboard = () => {
     <main className="w-full bg-green-50 lg:p-5 p-2 rounded-3xl flex flex-wrap">
       <div className="w-full md:w-full lg:w-3/4 px-3 lg:pr-20 lg:pl-4">
         <div className="w-full h-fit flex flex-wrap flex-col md:flex-row">
-          <div className="w-full h-fit md:w-full lg:w-1/2 px-8 py-3">
+          <div className="w-full h-fit md:w-full lg:w-1/2 lg:px-8 py-3">
             <div className="mb-10 my-2">
               <h4 className="font-bold">Dashboard</h4>
             </div>
