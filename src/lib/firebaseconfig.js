@@ -6,12 +6,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDqP4EjK6n6hvcmG98NhfNrRqVLrgK6drc",
-  authDomain: "mobank-78cdd.firebaseapp.com",
+  apiKey: process.env.FIREBASE_APIKEY,
+  authDomain: process.env.FIREBASE_AUTHDOMAIN,
   projectId: "mobank-78cdd",
   storageBucket: "mobank-78cdd.appspot.com",
   messagingSenderId: "764010829568",
-  appId: "1:764010829568:web:ef1977d5391461872ec5e5",
+  appId: process.env.FIREBASE_APPID,
 };
 
 // Initialize Firebase
