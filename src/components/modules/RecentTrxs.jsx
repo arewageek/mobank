@@ -18,30 +18,6 @@ export const RecentTrxs = () => {
       date: "09 March, 2024, 15:42",
       amount: 56.5,
     },
-    {
-      icon: <FaTrain />,
-      title: "Public Transport",
-      date: "09 March, 2024, 15:42",
-      amount: 2.5,
-    },
-    {
-      icon: <FaPlane />,
-      title: "Plane Tickets",
-      date: "09 March, 2024, 15:42",
-      amount: 70,
-    },
-    {
-      icon: <FaGasPump />,
-      title: "Gas Station",
-      date: "09 March, 2024, 15:42",
-      amount: 30.75,
-    },
-    {
-      icon: <FaDumbbell />,
-      title: "Gym",
-      date: "09 March, 2024, 15:42",
-      amount: 100,
-    },
   ];
 
   return (
@@ -54,7 +30,7 @@ export const RecentTrxs = () => {
         </div>
       </div>
 
-      <div className="overflow-x-auto w-full py-5 px-2">
+      <div className="overflow-x-auto w-full py-5 pr-2">
         <table className="table table-auto w-full font-[450]">
           <tbody>
             {transactions.map((trx, index) => (
@@ -64,12 +40,7 @@ export const RecentTrxs = () => {
                   index != transactions.length - 1 && "border-b-4"
                 } py-5 border-slate-200 text-slate-800`}
               >
-                <td className="py-5 px-4">
-                  <div className="flex items-center w-fit text-4xl text-green-700">
-                    {trx.icon}
-                  </div>
-                </td>
-                <td className="py-5 px-4">
+                <td className="py-5 pr-4">
                   <div className="flex items-center w-fit">{trx.title}</div>
                 </td>
                 <td className="py-5 px-4">

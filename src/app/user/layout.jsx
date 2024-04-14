@@ -10,7 +10,7 @@ export default function DashboardLayout({ children }) {
         </div>
       </div>
       <div className="w-full flex justify-between flex-col md:flex-row">
-        <div className="w-[250pt] md:w-[20%] px-5 py-3">
+        <div className="w-[250pt] md:w-[20%] px-5 py-3 relative">
           <Sidenav />
         </div>
         <div className="w-full lg:px-10 px-4 py-3">{children}</div>

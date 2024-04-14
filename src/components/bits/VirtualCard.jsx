@@ -1,15 +1,14 @@
-import { fsUserCards } from "@/lib/firestore";
+// import { fsUserCards } from "@/lib/user";
 import { auth } from "@clerk/nextjs";
 import React from "react";
 
 export const VirtualCard = async () => {
   const user = auth();
 
-  console.log(user);
+  console.log("User session data from virtual card", user);
 
-  const card = await fsUserCards(user.userId);
-
-  // console.log(card);
+  // const card = await fsUserCards(user.userId);
+  const card = { name: "demo name" };
 
   return (
     <div className="w-[200pt] lg:w-[260pt] h-[190px] lg:h-[250px] m-auto bg-red-100 rounded-xl relative text-white shadow-2xl transition-transform transform hover:scale-105">
@@ -45,7 +44,7 @@ export const VirtualCard = async () => {
             <div className="">
               <p className="font-light text-xs">Expiry</p>
               <p className="font-medium tracking-wider text-[10pt] lg:text-sm">
-                {card.valid || "03/25"}
+                {card.valid || "03/25g"}
               </p>
             </div>
 
