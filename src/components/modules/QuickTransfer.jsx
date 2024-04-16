@@ -12,6 +12,10 @@ export const QuickTransfer = () => {
     setShowModal(true);
   }
 
+  function closeModal() {
+    setShowModal(false);
+  }
+
   return (
     <div>
       <h3 className="font-bold text-[15pt] text-gray-800 mb-5">
@@ -29,7 +33,10 @@ export const QuickTransfer = () => {
                 placeholder="Account Number"
               />
 
-              <button className="px-5 py-3 rounded-lg bg-green-900/90 text-sm text-green-50 hover:bg-black transition duration-300">
+              <button
+                type="submit"
+                className="px-5 py-3 rounded-lg bg-green-900/90 text-sm text-green-50 hover:bg-black transition duration-300"
+              >
                 <FaPaperPlane />
               </button>
             </div>
@@ -65,7 +72,10 @@ export const QuickTransfer = () => {
             </div>
 
             <div className="w-full flex justify-center space-x-3 font-bold text-sm">
-              <button className="bg-green-950 text-green-50 px-4 py-2 w-full shadow-md rounded-lg hover:bg-green-300 border-2 border-green-950 hover:text-green-950 transition duration-300">
+              <button
+                type="submit"
+                className="bg-green-950 text-green-50 px-4 py-2 w-full shadow-md rounded-lg hover:bg-green-300 border-2 border-green-950 hover:text-green-950 transition duration-300"
+              >
                 Send Money
               </button>
 
@@ -81,12 +91,12 @@ export const QuickTransfer = () => {
         </div>
       </div>
 
-      {showModal && (
-        <Modal
-          title="Transaction Pending"
-          message="Please contact customer support to get your soft token"
-        />
-      )}
+      <Modal
+        title="Transaction Pending"
+        message="Please contact customer support to get your soft token"
+        visible={showModal}
+        close={closeModal}
+      />
     </div>
   );
 };

@@ -7,3 +7,8 @@ const userAtom = atom({
     user: null,
   },
 });
+
+const modalState = atom({
+  key: "modalAtom",
+  default: false,
+});

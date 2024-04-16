@@ -1,18 +1,29 @@
-import React from "react";
-import { FaTimesCircle } from "react-icons/fa";
+"use client";
 
-const Modal = ({ title, message }) => {
+import { useEffect, useState } from "react";
+import { FaTimesCircle } from "react-icons/fa";
+import { useRecoilState } from "recoil";
+
+const Modal = ({ title, message, visible, close }) => {
+  const closeModal = () => close();
+
   return (
-    <div className="w-screen h-screen backdrop-blur-sm fixed top-0 left-0 p-10 flex justify-center items-center">
-      <div className="px-10 py-5 w-full lg:w-1/3 rounded-lg shadow bg-white">
-        <div className="w-full flex justify-between items-center">
+    <div
+      className={`${
+        visible ? "fixed" : "hidden"
+      } w-screen h-screen backdrop-blur-sm top-0 left-0 p-10 flex justify-center items-center bg-black/35`}
+    >
+      <div className="px-10 py-5 w-full lg:w-1/3 rounded-lg shadow-lg bg-white divide-y-2">
+        <div className="w-full flex justify-between items-center py-3">
           <div>{title}</div>
           <div>
-            <FaTimesCircle />
+            <button onClick={() => closeModal()}>
+              <FaTimesCircle />
+            </button>
           </div>
         </div>
 
-        <div className="py-4 flex justify-center items-center">
+        <div className="flex justify-center items-center py-10 text-xs lg:text-sm">
           <div className="text-center">{message}</div>
         </div>
       </div>
