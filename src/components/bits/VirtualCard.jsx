@@ -5,7 +5,7 @@ import React from "react";
 export const VirtualCard = async () => {
   const user = auth();
 
-  console.log("User session data from virtual card", user);
+  // console.log("User session data from virtual card", user);
 
   // const card = await fsUserCards(user.userId);
   const card = { name: "demo name" };
